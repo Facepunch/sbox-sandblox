@@ -12,7 +12,7 @@
 		[
 			{
 				"name": "sandblox",
-				"title": "sandblox"
+				"title": "sandblox",
 				"description": "Voxel rendering experiment (not currently networked)"
 			}
 		]
