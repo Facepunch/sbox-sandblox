@@ -107,6 +107,14 @@ namespace Sandblox
 
 							build = true;
 						}
+						
+						for ( int i = 0; i < 6; i++ )
+						{
+							var adjacentPos = Map.GetAdjacentPos( x3, y3, z3, i );
+							var adjadentChunkIndex = (adjacentPos.x / Chunk.ChunkSize) + (adjacentPos.y / Chunk.ChunkSize) * numChunksX + (adjacentPos.z / Chunk.ChunkSize) * numChunksX * numChunksY;
+							
+							chunkids.Add( adjadentChunkIndex );
+						}
 					}
 				}
 			}
