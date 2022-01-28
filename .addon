@@ -1,5 +1,13 @@
 {
-	"sharedassets": "*.*",
-	"type": "game",
-	"ident": "facepunch.sandblox"
+  "SharedAssets": "*.*",
+  "Title": "Sbox Sandblox",
+  "Type": "game",
+  "Org": "local",
+  "Ident": "sbox-sandblox",
+  "Schema": 1,
+  "HasAssets": true,
+  "AssetsPath": "",
+  "HasCode": true,
+  "CodePath": "code",
+  "RootNamespace": "Sandbox"
 }

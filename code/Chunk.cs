@@ -83,11 +83,14 @@ namespace Sandblox
 				var boundsMin = Vector3.Zero;
 				var boundsMax = boundsMin + (ChunkSize * 32);
 				mesh.SetBounds( boundsMin, boundsMax );
-
-				modelBuilder.AddMesh( mesh );
 			}
 
 			Build();
+
+			if ( IsClient )
+			{
+				modelBuilder.AddMesh( mesh );
+			}
 
 			model = modelBuilder.Create();
 
