@@ -99,6 +99,7 @@ namespace Sandblox
 			{
 				var transform = new Transform( Offset * VoxelSize );
 				sceneObject = new SceneObject( model, transform );
+				sceneObject.SetValue( "VoxelSize", VoxelSize );
 			}
 
 			Initialized = true;

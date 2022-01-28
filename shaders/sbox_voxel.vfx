@@ -56,9 +56,11 @@ VS
 {
 	#include "common/vertex.hlsl"
 
+	float g_flVoxelSize < Default( 32.0 ); >;
+
 	PixelInput MainVs( INSTANCED_SHADER_PARAMS( VertexInput i ) )
 	{
-		float3 position = float3( float( i.vData & ( 63 ) ), float( ( i.vData >> 6 ) & ( 63 ) ), float( ( i.vData >> 12 ) & ( 63 ) ) ) * 16;
+		float3 position = float3( float( i.vData & ( 63 ) ), float( ( i.vData >> 6 ) & ( 63 ) ), float( ( i.vData >> 12 ) & ( 63 ) ) ) * g_flVoxelSize;
 		int texindex = int( ( i.vData >> 18 ) & ( 31 ) );
 		float brightness = ( float( ( i.vData >> 23 ) & ( 15 ) ) + 2 ) / 16.0;
 		int normal = int( ( i.vData >> 27 ) & ( 7 ) );
