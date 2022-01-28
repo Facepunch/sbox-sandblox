@@ -58,7 +58,7 @@ VS
 
 	PixelInput MainVs( INSTANCED_SHADER_PARAMS( VertexInput i ) )
 	{
-		float3 position = float3( float( i.vData & ( 63 ) ), float( ( i.vData >> 6 ) & ( 63 ) ), float( ( i.vData >> 12 ) & ( 63 ) ) ) * 32;
+		float3 position = float3( float( i.vData & ( 63 ) ), float( ( i.vData >> 6 ) & ( 63 ) ), float( ( i.vData >> 12 ) & ( 63 ) ) ) * 16;
 		int texindex = int( ( i.vData >> 18 ) & ( 31 ) );
 		float brightness = ( float( ( i.vData >> 23 ) & ( 15 ) ) + 2 ) / 16.0;
 		int normal = int( ( i.vData >> 27 ) & ( 7 ) );

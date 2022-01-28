@@ -49,7 +49,7 @@ namespace Sandblox
 
 		public void SetBlockInDirection( Vector3 pos, Vector3 dir, byte blocktype )
 		{
-			var face = Map.GetBlockInDirection( pos * (1.0f / 32.0f), dir.Normal, 10000, out var hitpos, out _ );
+			var face = Map.GetBlockInDirection( pos * (1.0f / Chunk.VoxelSize), dir.Normal, 10000, out var hitpos, out _ );
 			if ( face == Map.BlockFace.Invalid )
 				return;
 

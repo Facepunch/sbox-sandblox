@@ -5,7 +5,8 @@ namespace Sandblox
 {
 	public partial class Chunk : Entity
 	{
-		public static readonly int ChunkSize = 32;
+		public const int ChunkSize = 32;
+		public const float VoxelSize = 16.0f;
 
 		public Map Map { get; set; }
 
@@ -81,7 +82,7 @@ namespace Sandblox
 				mesh = new Mesh( material );
 
 				var boundsMin = Vector3.Zero;
-				var boundsMax = boundsMin + (ChunkSize * 32);
+				var boundsMax = boundsMin + (ChunkSize * VoxelSize);
 				mesh.SetBounds( boundsMin, boundsMax );
 			}
 
@@ -96,7 +97,7 @@ namespace Sandblox
 
 			if ( IsClient )
 			{
-				var transform = new Transform( Offset * 32.0f );
+				var transform = new Transform( Offset * VoxelSize );
 				sceneObject = new SceneObject( model, transform );
 			}
 
@@ -268,7 +269,7 @@ namespace Sandblox
 
 				slice.vertices.Add( new BlockVertex( (uint)(x + vOffset.x), (uint)(y + vOffset.y), (uint)(z + vOffset.z), faceData ) );
 
-				slice.collisionVertices.Add( new Vector3( (x + vOffset.x) + Offset.x, (y + vOffset.y) + Offset.y, (z + vOffset.z) + Offset.z ) * 32.0f );
+				slice.collisionVertices.Add( new Vector3( (x + vOffset.x) + Offset.x, (y + vOffset.y) + Offset.y, (z + vOffset.z) + Offset.z ) * VoxelSize );
 				slice.collisionIndices.Add( collisionIndex + i );
 			}
 		}
